@@ -1,4 +1,4 @@
-# Connect to MySQL HeatWave With Compute and Create and Load airportdb Schema
+# Connect to MySQL HeatWave With Compute and Create and Load mysql_customer_orders Schema
 
 ## Introduction
 
@@ -16,7 +16,7 @@ In this lab, you will be guided through the following tasks:
 - Create Compute Instance
 - Setup Compute Instance with MySQL Shell
 - Connect to MySQL DB System
-- Create and Load airportdb Schema
+- Create and Load mysql_customer_orders Schema
 
 ### Prerequisites
 
@@ -136,7 +136,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/comute-running.png "comute running")
 
-## Task 3: Connect to MySQL Database System and Create and Load airportdb schema 
+## Task 3: Connect to MySQL Database System and Create and Load DB schema 
 
 1. Copy the public IP address of the active Compute Instance to your notepad
 
@@ -230,9 +230,9 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>util.loadDump("https://objectstorage.us-ashburn-1.oraclecloud.com/p/yXOA3Kwid4uG0oHvHMufbK3cSESmQlU6-0bVB_1vQ8VxR0ggB1m-nDYYOXXy0O5W/n/idazzjlcjqzj/b/airportdb-bucket-112312031/o/airportdb_all/", {progressFile: "progress.json"})</copy>
     ```
 
-    **Note** it takse about 12 minutes to create and load the airportbb schema
+    **Note** it takse about 12 minutes to create and load the mysql_customer_orders schema
 
-9. View  the airportdb total records per table in
+9. View  the mysql_customer_orders total records per table in
 
     a. 
 
@@ -243,10 +243,10 @@ You will need a compute Instance to connect to your brand new MySQL database.
     b. 
 
     ```bash
-    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
+    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'mysql_customer_orders';</copy>
     ```
 
-    ![CONNECT](./images/airportdb-list.png "airportdb list") 
+    ![CONNECT](./images/mysql_customer_orders-list.png "mysql_customer_orderslist") 
 
 You may now proceed to the next lab.
 

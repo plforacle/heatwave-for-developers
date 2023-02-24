@@ -20,12 +20,12 @@
         },
 
         {
-          "title": "Lab 2: Created HeatWave DB and Cluster",
-          "filename": "../../create-HW-cluster-only-dbs/create-HW-cluster-only-dbs.md"
+          "title": "Lab 2: Created HeatWave DB",
+          "filename": "../../create-heatwave-db-only/create-heatwave-db-only.md"
         },
 
         {
-          "title": "Lab 3: Connect to MySQL HeatWave with Compute and Create and Load airportdb Schema",
+          "title": "Lab 3: Connect to MySQL HeatWave with Compute and Create and Load DB Schema",
           "filename": "../../connect-dbs-compute/connect-dbs-compute.md"
         },
            
@@ -40,25 +40,11 @@
         },
 
         {
-          "title": "Lab 6: Use Oracle Analytics Cloud with Heatwave",
-          "filename": "../../do-oac/do-oac.md"
-        }, 
-
-        {
-          "title": "Lab 7: Connect to MySQL HeatWave Using Bastion",
-          "filename": "../../connect-dbs-bastion/connect-dbs-bastion.md"
-        },
-
-        {
-          "title": "Lab 8: Develop MySQL HeatWave PHP Apps",
+          "title": "Lab 6: Develop MySQL HeatWave PHP Apps",
           "filename": "../../develop/develop.md"
         }, 
 
-        {
-          "title": "Lab 9: Develop MySQL HeatWave Apps with Oracle APEX",
-          "filename": "../../apex-heatwave/apex-heatwave.md"
-        }, 
-        
+       
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

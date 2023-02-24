@@ -6,13 +6,14 @@ A HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave n
 
 ![Connect](./images/heatwave-lab-setup.png "heatwave lab setup ")
 
-_Estimated Time:_ 10 minutes
+_Estimated Time:_ 15 minutes
 
 
 ### Objectives
 
 In this lab, you will be guided through the following task:
 
+- Add a HeatWave Cluster to MDS-HW MySQL Database System
 - Load Airportdb Data into HeatWave
 
 ### Prerequisites
@@ -22,7 +23,23 @@ In this lab, you will be guided through the following task:
 - Completed Lab 2
 
 
-## Task 1: Load airportdb Data into HeatWave Cluster
+## Task 1: Add a HeatWave Cluster to MDS-HW MySQL Database System
+
+1. Open the navigation menu  
+    Databases
+    MySQL
+    DB Systems
+2. Choose the root Compartment. A list of DB Systems is displayed.
+    ![Connect](./images/mysql-add-heatwave.png "mysql add heatwave ")
+3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
+    ![Connect](./images/mysql-add-heat-vcn.png "mysql add heat vcn ")
+4. **Set Node Count to 2 for this Lab Click** “Add HeatWave Cluster” to create the HeatWave cluster
+    ![Connect](./images/mysql-add-heat-estimate.png "mysql add-heat estimate")
+5. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 
+6. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+    ![Connect](./images/mysql-heat-cluster-complete.png "mysql heat cluster complete ")
+
+## Task 2: Load airportdb Data into HeatWave Cluster
 
 1. If not already connected with SSH, connect to Compute instance using Cloud Shell
 
@@ -48,7 +65,7 @@ In this lab, you will be guided through the following task:
 
     ![Connect](./images/load-cluster-end.png "load cluster end")
 
-5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
+5. Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
     ```bash
     <copy>USE performance_schema;</copy>
@@ -70,6 +87,6 @@ In this lab, you will be guided through the following task:
 
 - **Author** - Perside Foster, MySQL Solution Engineering
 
-- **Contributors** - Mndy Pang, Principal Product Manager, Salil Pradhan, Principal Product Manager, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+- **Contributors** - Salil Pradhan, Principal Product Manager, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
 - **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, May 2022
 

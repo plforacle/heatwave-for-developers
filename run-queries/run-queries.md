@@ -30,12 +30,12 @@ In this lab, you will be guided through the following tasks:
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
 
-3. Change to the airport database
+3. Change to the mysql_customer_orders database
 
     Enter the following command at the prompt
 
     ```bash
-    <copy>USE airportdb;</copy>
+    <copy>USE mysql_customer_orders;</copy>
     ```
 
 4. **Query 1** - Find per-company average age of passengers from Switzerland, Italy and France
@@ -43,46 +43,30 @@ In this lab, you will be guided through the following tasks:
 5. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
     ```bash
-    <copy>EXPLAIN SELECT
-    airline.airlinename,
-    AVG(datediff(departure,birthdate)/365.25) as avg_age,
-    count(*) as nb_people
-FROM
-    booking, flight, airline, passengerdetails
-WHERE
-    booking.flight_id=flight.flight_id AND
-    airline.airline_id=flight.airline_id AND
-    booking.passenger_id=passengerdetails.passenger_id AND
-    country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-    airline.airlinename
-ORDER BY
-    airline.airlinename, avg_age
-LIMIT 10\G</copy>
-    ```
+        <copy>EXPLAIN SELECT
+        select customer_id,order_datetime purchase_date
+            ,unit_price,discount,quantity,order_amount_total,order_discount_total
+            ,ROUND((order_amount_total - order_discount_total),1) purchase_total
+            ,start_date,end_date,coupon_redemption_status,product_name product_title
+            FROM customer_order_product_coupon_view 
+            where customer_id=1 and promotion_id =99
+            order by order_datetime; 
+        </copy>
+        ```
 
     ![RUN](./images/heatwave-query-company-explain.png "heatwave query company explain")
 
 6. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
 
      ```bash
-    <copy>SELECT
-    airline.airlinename,
-    AVG(datediff(departure,birthdate)/365.25) as avg_age,
-    count(*) as nb_people
-FROM
-    booking, flight, airline, passengerdetails
-WHERE
-    booking.flight_id=flight.flight_id AND
-    airline.airline_id=flight.airline_id AND
-    booking.passenger_id=passengerdetails.passenger_id AND
-    country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-    airline.airlinename
-ORDER BY
-    airline.airlinename, avg_age
-LIMIT 10;
-</copy>
+    <copy>select customer_id,order_datetime purchase_date
+        ,unit_price,discount,quantity,order_amount_total,order_discount_total
+        ,ROUND((order_amount_total - order_discount_total),1) purchase_total
+        ,start_date,end_date,coupon_redemption_status,product_name product_title
+        FROM customer_order_product_coupon_view 
+        where customer_id=1 and promotion_id =99
+        order by order_datetime;
+    </copy>
     ```
     ![Connect](./images/heatwave-query-company.png "heatwave query company")
 
@@ -97,140 +81,19 @@ LIMIT 10;
 8. Enter the following command at the prompt:
 
      ```bash
-    <copy>SELECT
-    airline.airlinename,
-    AVG(datediff(departure,birthdate)/365.25) as avg_age,
-    count(*) as nb_people
-FROM
-    booking, flight, airline, passengerdetails
-WHERE
-    booking.flight_id=flight.flight_id AND
-    airline.airline_id=flight.airline_id AND
-    booking.passenger_id=passengerdetails.passenger_id AND
-    country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-    airline.airlinename
-ORDER BY
-    airline.airlinename, avg_age
-LIMIT 10;</copy>
+    <copy>select customer_id,order_datetime purchase_date
+            ,unit_price,discount,quantity,order_amount_total,order_discount_total
+            ,ROUND((order_amount_total - order_discount_total),1) purchase_total
+            ,start_date,end_date,coupon_redemption_status,product_name product_title
+            FROM customer_order_product_coupon_view 
+            where customer_id=1 and promotion_id =99
+            order by order_datetime;
+    </copy>
     ```
+
     ![RUN](./images/heatwave-query-average.png "heatwave-query-average")
 
-9. To see if `use_secondary_engine` is enabled (=ON)
-
-    Enter the following command at the prompt:
-    
-     ```bash
-    <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
-    ```
-
-10. Run additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time.
-
-    (Example  **SET SESSION `use_secondary_engine`=On;**)
-
-    (Example  **SET SESSION `use_secondary_engine`=Off;**)
-
-11. Enter the following command at the prompt
-
-     ```bash
-    <copy>SET SESSION use_secondary_engine=ON;</copy>
-    ```
-
-12. **Query 2** -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
-
-    ```bash
-    <copy> SELECT
-    airline.airlinename,
-    SUM(booking.price) as price_tickets,
-    count(*) as nb_tickets
-FROM
-    booking, flight, airline, airport_geo
-WHERE
-    booking.flight_id=flight.flight_id AND
-    airline.airline_id=flight.airline_id AND
-    flight.from=airport_geo.airport_id AND
-    airport_geo.country = "UNITED STATES"
-GROUP BY
-    airline.airlinename
-ORDER BY
-    nb_tickets desc, airline.airlinename
-LIMIT 10;
-    </copy>
-    ```
-
-13. Enter the following command at the prompt:
-
-     ```bash
-    <copy>SET SESSION use_secondary_engine=OFF;</copy>
-    ```
-
-    Run Query b again:
-
-    ```bash
-    <copy> SELECT
-    airline.airlinename,
-    SUM(booking.price) as price_tickets,
-    count(*) as nb_tickets
-FROM
-    booking, flight, airline, airport_geo
-WHERE
-    booking.flight_id=flight.flight_id AND
-    airline.airline_id=flight.airline_id AND
-    flight.from=airport_geo.airport_id AND
-    airport_geo.country = "UNITED STATES"
-GROUP BY
-    airline.airlinename
-ORDER BY
-    nb_tickets desc, airline.airlinename
-LIMIT 10;
-    </copy>
-    ```
-
-14. **Query 3** - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
-
-    ```bash
-    <copy>SET SESSION use_secondary_engine=ON;</copy>
-    ```
-
-    ```bash
-    <copy>SELECT
-    firstname,
-    lastname,
-    COUNT(booking.passenger_id) AS count_bookings
-FROM
-    passenger,
-    booking
-WHERE
-    booking.passenger_id = passenger.passenger_id
-        AND passenger.lastname = 'Aldrin'
-        OR (passenger.firstname = 'Neil'
-        AND passenger.lastname = 'Armstrong')
-        AND booking.price > 400.00
-GROUP BY firstname , lastname;</copy>
-    ```
-
-    ```bash
-    <copy>SET SESSION use_secondary_engine=OFF;</copy>
-    ```
-
-    ```bash
-    <copy>SELECT
-    firstname,
-    lastname,
-    COUNT(booking.passenger_id) AS count_bookings
-FROM
-    passenger,
-    booking
-WHERE
-    booking.passenger_id = passenger.passenger_id
-        AND passenger.lastname = 'Aldrin'
-        OR (passenger.firstname = 'Neil'
-        AND passenger.lastname = 'Armstrong')
-        AND booking.price > 400.00
-GROUP BY firstname , lastname;</copy>
-    ```
-
-15. Keep HeatWave processing enabled
+9. Keep HeatWave processing enabled
 
     ```bash
     <copy>SET SESSION use_secondary_engine=ON;</copy>

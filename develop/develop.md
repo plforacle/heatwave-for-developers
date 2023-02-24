@@ -4,9 +4,7 @@
 
 MySQL HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
 
-![Connect](./images/architecture-oac-heatwave.png " ")
-
-_Estimated Lab Time:_ 40 minutes
+_Estimated Lab Time:_ 30 minutes
 
 ### Objectives
 
@@ -204,38 +202,38 @@ if ($stmt = $link->prepare($query)) {
 
     Example: http://129.213.167..../dbtest.php  
 
-## **TASK 3:** Create Google Chart Application
+## **TASK 3:** Create Marketing Analytic application
 
 1. Go to the development folder
 
     ````
     <copy>cd /var/www/html</copy>
     ````
-2. Create mydbchart.php file
+
+2. Click on this link to **Download file [coupon_order_app.zip](files/coupon_order_app.zip)**  to your local machine
+3. Unnzip coupon_order_app.zip file 
 
     ````
-    <copy>sudo nano mydbchart.php</copy>
+    <copy>unzip coupon_order_app.zip </copy>
     ````
-3. Click on this link to **Download file [dbchart.php](files/dbchart.php)**  to your local machine
-2. Open dbchart.php from your local machine
 
-    ![MDS](./images/dbchart-open.png " ")
+4. Open the config.php file 
 
-4. copy all of the content of dbchart.php file from your local machine
-    - add the content to the mydbchart.php file that you are  creating
+    ````
+    <copy>sudo  nano coupon_order_app/config.php </copy>
+    ````
 
-        ![MDS](./images/dbchart-select-all.png " ")
-    - Remember to replace the IP daadress,username, and password (lines 2 and 98 )
-        - $con = mysqli_connect('30.0...','admin','Welcome#123','airportdb');
-        - $link = mysqli_connect('30.0...','admin','Welcome#123','airportdb');
-        ![MDS](./images/dbchart-copied.png " ")
-    - Save the mydbchart.php 
+    Remember to replace the IP daadress,username, and password (lines 2 and 98 )
+        - $con = mysqli_connect('30.0...','admin','Welcome#123','mysql_customer_orders');
+
+    - Save the coupon_order_app/config.php
 
 
-3.	From your local  machine connect to dbhwtest.php
+3. From your local  machine connect to dbhwtest.php
 
-    Example: http://129.213.167..../mydbchart.php
-    ![MDS](./images/mydbchart-out.png " ")
+    Example: http://129.213.167..../coupon_order_app/login.php
+
+    ![MDS](./images/login_page.png " ")
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering, Harsh Nayak , MySQL Solution Engineering 
