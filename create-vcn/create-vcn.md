@@ -44,8 +44,7 @@ In this lab, you will be guided through the following tasks:
     On Basic Information, complete the following fields:
 
     VCN Name:
-        ```
-        <copy>MDS-VCN</copy>
+        ````copy>MDS-VCN</copy>
         ```
     Compartment: Select  **(root)**
 
