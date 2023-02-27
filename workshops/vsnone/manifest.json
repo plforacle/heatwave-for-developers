@@ -15,12 +15,12 @@
         },
  
         {
-          "title": "Lab 1: Created Virtual Cloud Network",
-          "filename": "../../create-vcn/create-vcn.md"
+          "title": "Lab 1: Create Compartment and Virtual Cloud Network",
+          "filename": "../../create-compartment-vcn/create-compartment-vcn.md"
         },
 
         {
-          "title": "Lab 2: Created HeatWave DB",
+          "title": "Lab 2: Create  HeatWave DB",
           "filename": "../../create-heatwave-db-only/create-heatwave-db-only.md"
         },
 

@@ -13,15 +13,14 @@ In this lab, you will be guided through the following tasks:
 - Create Compartment
 - Create Virtual Cloud Network
 - Configure security list to allow MySQL incoming connections
-- Configure security list to allow HTTP incoming connections
 
 ### Prerequisites
 
 - An Oracle Free Tier or Paid Cloud Account
 - A web browser
-- Login to OCI to land on OCI Dashboard (This image shows a trial account)
+- Login to OCI to land on OCI Dashboard
 
-![INTRO](./images/oci-dashboard.png " ")
+![INTRO](./images/oci-dashboard.png "oci-dashboard")
 
 ## Task 1: Create Compartment
 
@@ -38,15 +37,15 @@ In this lab, you will be guided through the following tasks:
 1. Click Navigation Menu
     Select Networking
     Select Virtual Cloud Networks
-    ![VCN](./images/03vcn01.png " ")
+    ![VCN](./images/menuvcn.png "menuvcn")
 
 2. Click **Start VCN Wizard**
-    ![VCN](./images/03vcn02.png " ")
+    ![VCN](./images/networking_main.png "networking_main")
 
 3. Select 'Create VCN with Internet Connectivity'
 
     Click 'Start VCN Wizard'
-    ![VCN](./images/03vcn03.png " ")
+    ![VCN](./images/vcn_wizard_start.png "vcn_wizard_start")
 
 4. Create a VCN with Internet Connectivity
 
@@ -61,53 +60,53 @@ In this lab, you will be guided through the following tasks:
     Compartment: Select  **heatwave**
 
     Your screen should look similar to the following
-        ![VCN](./images/03vcn04.png " ")
+        ![VCN](./images/vcn_internet_connect_config.png "vcn_internet_connect_config")
 
 5. Click 'Next' at the bottom of the screen
 
 6. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
 
     Click 'Create' to create the VCN
-    ![VCN](./images/03vcn04-1.png " ")
 
 7. The Virtual Cloud Network creation is completing
-    ![VCN](./images/03vcn05.png " ")
+    ![VCN](./images/vcn_wizard_review.png "vcn_wizard_review")
 
-8. Click 'View Virtual Cloud Network' to display the created VCN
-    ![VCN](./images/03vcn06.png " ")
+8. Click 'View VCN' to display the created VCN
+    ![VCN](./images/wizard_view_vcn.png "wizard_view_vcn")
 
 ## Task 3: Configure security list to allow MySQL incoming connections
 
 1. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-MDS-VCN**'
-     ![VCN](./images/03vcn07.png " ")
+     ![VCN](./images/vcn_details.png "vcn_details")
 
 2. On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
-    ![VCN](./images/03vcn08.png " ")
+    ![VCN](./images/vcn_security_list.png "vcn_security_list")
 
 3. On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
-    ![VCN](./images/03vcn09.png " ")
+    ![VCN](./images/vcn_mysql_ingress.png "vcn_mysql_ingress")
 
 4. On Add Ingress Rules page under Ingress Rule 1
 
     Add an Ingress Rule with Source CIDR
+
         ```<copy>0.0.0.0/0</copy>```
 
     Destination Port Range 
-        ```
-        <copy>3306,33060</copy>
-        ```
+
+        ```<copy>3306,33060</copy>```
+    
     Description 
-        ```
-        <copy>MySQL Port Access</copy>
-        ```
+
+        ```<copy>MySQL Port Access</copy>```
+        
     Click 'Add Ingress Rule'
-        ![VCN](./images/03vcn10.png " ")
+        ![VCN](./images/vcn_mysql_iadd_ngress.png "vcn_mysql_iadd_ngress")
 
 5. On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
-    ![VCN](./images/03vcn11.png " ")
+    ![VCN](./images/vcn_mysql_ingress_completed.png "vcn_mysql_ingress_completed")
 
 ## Acknowledgements
 
 - **Author** - Perside Foster, MySQL Solution Engineering
-- **Contributors** - Airton Lastori, Principal Product Manager, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, Oct 2022
+- **Contributors** - Salil Pradhan, Principal Product Manager, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2023
