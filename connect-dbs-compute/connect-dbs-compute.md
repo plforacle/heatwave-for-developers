@@ -94,10 +94,10 @@ You will need a compute Instance to connect to your brand new MySQL database.
     Instances
     ![CONNECT](./images/compute-launch.png "compute launch ")
 
-5. On Instances in **(root)** Compartment, click  **Create Instance**
+5. On Instances in **heatwave** Compartment, click  **Create Instance**
     ![CONNECT](./images/compute-create.png "compute create")
 
-6. On Create Compute Instance 
+6. On Create Compute Instance
 
     Enter Name
 
@@ -105,7 +105,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>MDS-Client</copy>
     ```
 
-7. Make sure **(root)** compartment is selected 
+7. Make sure **heatwave** compartment is selected
 
 8. On Placement, keep the selected Availability Domain
 
@@ -115,28 +115,28 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 10. Select Instance Shape: VM.Standard.E2.2
 
-      ![CONNECT](./images/compute-shape-select.png "compute shape select") 
+      ![CONNECT](./images/compute-shape-select.png "compute shape select")
  
-11. On Networking, make sure '**MDS-VCN**' is selected
+11. On Networking, make sure '**heatwave-vcn**' is selected
 
-    'Assign a public IP address' should be set to Yes 
+    'Assign a public IP address' should be set to Yes
 
     ![CONNECT](./images/compute-vcn.png "compute vcn.")
 
-12. On Add SSH keys, paste the public key from the notepad. 
+12. On Add SSH keys, paste the public key from the notepad.
   
     ![CONNECT](./images/compute-id-rsa-paste.png "compute id rsa paste")
 
-13. Click '**Create**' to finish creating your Compute Instance. 
+13. Click '**Create**' to finish creating your Compute Instance.
 
 14. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
     ![CONNECT](./images/compute-provisioning.png "compute provisioning")
 
-15. The state 'Running' indicates that the Virtual Machine is ready to use. 
+15. The state 'Running' indicates that the Virtual Machine is ready to use.
 
     ![CONNECT](./images/comute-running.png "comute running")
 
-## Task 3: Connect to MySQL Database System and Create and Load DB schema 
+## Task 3: Connect to MySQL Database System and Create and Load DB schema
 
 1. Copy the public IP address of the active Compute Instance to your notepad
 
@@ -168,13 +168,13 @@ You will need a compute Instance to connect to your brand new MySQL database.
 3. Your notepad should look like the following:
      ![CONNECT](./images/notepad-rsa-key-compute-mds.png "notepad rsa key compute mds")
 
-4. Indicate the location of the private key you created earlier with **MDS-Client**. 
+4. Indicate the location of the private key you created earlier with **MDS-Client**.
 
     Enter the username **opc** and the Public **IP Address**.
 
     Note: The **MDS-Client**  shows the  Public IP Address as mentioned on TASK 5: #11
 
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**)
 
     ```bash
     <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
@@ -194,17 +194,9 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>sudo yum install mysql-shell -y</copy>
     ```
 
-    ![CONNECT](./images/install-mysql-shell.png "install mysql shell")
-
-   **Connect to MySQL Database Service**
-
-6. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
-
-   The endpoint (IP Address) can be found in your notepad or  the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
-
     ![CONNECT](./images/connect-shell.png "connect shell")
 
-7. Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
+6. Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
 
@@ -216,9 +208,9 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/connect-myslqsh.png "connect myslqsh")
 
-8. Create  and load sample database (airpordb) from object storage
- 
-    a. 
+7. Create  and load sample database (airpordb) from object storage
+
+     a. 
 
     ```bash
         <copy>\js</copy>
@@ -227,12 +219,12 @@ You will need a compute Instance to connect to your brand new MySQL database.
     b. 
 
     ```bash
-    <copy>util.loadDump("https://objectstorage.us-ashburn-1.oraclecloud.com/p/yXOA3Kwid4uG0oHvHMufbK3cSESmQlU6-0bVB_1vQ8VxR0ggB1m-nDYYOXXy0O5W/n/idazzjlcjqzj/b/airportdb-bucket-112312031/o/airportdb_all/", {progressFile: "progress.json"})</copy>
+    <copy>util.loadDump("https://objectstorage.us-ashburn-1.oraclecloud.com/p/XEr0VxeZ--ec5VOZ3RUF82T2zYZ86mMysnI6idtoe7Fak0vL2ZihIddkm7awoWFx/n/mysqlpm/b/plf_mysql_customer_orders/o/mco_dump_02102023/", {progressFile: "progress.json"})</copy>
     ```
 
-    **Note** it takse about 12 minutes to create and load the mysql_customer_orders schema
+    **Note** it takse about 5 minutes to create and load the mysql_customer_orders schema
 
-9. View  the mysql_customer_orders total records per table in
+8. View  the mysql_customer_orders total records per table in
 
     a. 
 
