@@ -99,6 +99,8 @@ In this lab, you will be guided through the following tasks:
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
 
+## You may now proceed to the next lab
+
 ## Learn More
 
 - [Oracle Cloud Infrastructure MySQL Database Service Documentation](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)

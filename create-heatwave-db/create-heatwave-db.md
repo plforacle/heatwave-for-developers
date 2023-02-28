@@ -30,7 +30,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/mysql-create.png "mysql create ")
 
 3. Select the Development or Testing Option
-    ![MDS](./images/mysql_create_select_option.png "select option")
+    ![MDS](./images/mysql-create-select-option.png "select option")
 
 4. Create MySQL DB System dialog complete the fields in each section
 
@@ -112,7 +112,7 @@ In this lab, you will be guided through the following tasks:
 
 13. Review **Create MySQL DB System**  Screen
 
-    ![MDS](./images/mysql_create_db.png "mysql create db")
+    ![MDS](./images/mysql-create-db.png "mysql create db")
 
     Click the '**Create**' button
 
@@ -126,6 +126,8 @@ In this lab, you will be guided through the following tasks:
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address)
 
     ![MDS](./images/mysql-create-button.png"mysql create button ")
+
+## You may now proceed to the next lab
 
 ## Acknowledgements
 
