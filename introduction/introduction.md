@@ -22,6 +22,7 @@ _Estimated Lab Time:_ 3 hours +
 ### About Product/Technology
 
 **SINGLE MySQL DATABASE FOR OLTP AND OLAP**
+
 MySQL HeatWave is the only MySQL service that provides a single solution for running OLTP and OLAP workloads. It
 enables customers to run both OLTP and OLAP workloads in MySQL, within a single database platform, without the need to
 ETL data to a separate database for analytic processing. No changes to existing applications are necessary. *

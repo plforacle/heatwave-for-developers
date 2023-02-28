@@ -122,7 +122,7 @@ In this lab, you will be guided through the following tasks:
     ```
 
 5. Click 'Add Ingress Rule'
-        ![VCN](./images/vcn_mysql_add_ingress.png "Save  MySQL Ingress Rule  entries")
+    ![VCN](./images/vcn_mysql_add_ingress.png "Save  MySQL Ingress Rule  entries")
 
 6. On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/vcn_mysql_ingress_completed.png "view  MySQL Ingress Rules")
@@ -155,14 +155,15 @@ In this lab, you will be guided through the following tasks:
 
     ```bash
     <copy>Allow HTTP connections</copy>
-    ````
+    ```
 
 6. Click 'Add Ingress Rule'
-    ![VCN](./images/vcn_http_add_ingress.png " Add HTTP Ingress Rule")
+
+    ![VCN](./images/vcn_ttp_add_ingress.png "Add HTTP Ingress Rule")
 
 7. On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
 
-    ![VCN](./images/vcn_http_ingress_completed.png "View VCN Completed HTTP Ingress rules")
+    ![VCN](./images/vcn_ttp_ingress_completed.png"View VCN Completed HTTP Ingress rules")
 
 **You may now proceed to the next lab**
 
