@@ -28,7 +28,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/mysql-menu.png "mysql menu")
 
 2. Click 'Create MySQL DB System'
-    ![MDS](./images/mysql-create-db.png "mysql create DB")
+    ![MDS](./images/mysql-create.png "mysql create ")
 
 3. Select the Development or Testing Option
     ![MDS](./images/mysql-create-select-option.png "select option")
@@ -58,12 +58,14 @@ In this lab, you will be guided through the following tasks:
 
     ```bash
     <copy>MySQL Database Service HeatWave Instance</copy>
-    ```
+   ```
 
-    Select **HeatWave** to specify a HeatWave DB System
-    ![MDS](./images/mysql-heatwave.png "mysql heatwave ")
+    ![MDS](./images/mysql-heatwave-basic.png "HeatWave Basic")
 
-6. Create Administrator Credentials
+6. Select **HeatWave** to specify a HeatWave DB System
+    ![MDS](./images/mysql-heatwave-system-selection.png "mysql heatwave system selection")
+
+7. Create Administrator Credentials
 
     **Enter Username** (write username to notepad for later use)
 
@@ -73,7 +75,7 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/mysql-password.png "mysql password ")
 
-7. On Configure networking, keep the default values
+8. On Configure networking, keep the default values
 
     Virtual Cloud Network: **heatwave-vcn**
 
@@ -81,15 +83,15 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/mysql-vcn.png "mysql vcn ")
 
-8. On Configure placement under 'Availability Domain'
+9. On Configure placement under 'Availability Domain'
 
     Select AD-1
 
-    Do not check 'Choose a Fault Domain' for this DB System.
+    Do not check 'Choose an Availability Domain' for this DB System.
 
-    ![MDS](./images/mysql-fault-domain.png "mysql fault domain ")
+    ![MDS](./images/mysql-avail-domain.png "mysql availability domain ")
 
-9. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
+10. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
     Data Storage Size (GB) Set value to:  **1024**
 
@@ -97,15 +99,15 @@ In this lab, you will be guided through the following tasks:
     <copy>1024</copy>
     ```
 
-    ![MDS](./images/mysql-hardware.png "mysql hardware ")
+    ![MDS](./images/mysql-configure-hardware.png "mysql hardware ")
 
-10. On Configure Backups, disable 'Enable Automatic Backup'
+11. On Configure Backups, disable 'Enable Automatic Backup'
 
     ![MDS](./images/mysql-backup.png "mysql backup ")
 
-11. Click on Show Advanced Options
+12. Click on Show Advanced Options
 
-12. Go to the Networking tab, in the Hostname field enter  (same as DB System Name):
+13. Go to the Networking tab, in the Hostname field enter  (same as DB System Name):
 
     ```bash
         <copy>heatwave-db</copy> 
@@ -113,22 +115,22 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/mysql-host.png "mysqlhost ")
 
-13. Review **Create MySQL DB System**  Screen
+14. Review **Create MySQL DB System**  Screen
 
-    ![MDS](./images/mysql-create-db.png "mysql create db")
+    ![MDS](./images/mysql-create-button.png "mysql create dbbutton")
 
     Click the '**Create**' button
 
-14. The New MySQL DB System will be ready to use after a few minutes
+15. The New MySQL DB System will be ready to use after a few minutes
 
     The state will be shown as 'Creating' during the creation
-    ![MDS](./images/mysql-create-button.png "mysql create button ")
+    ![MDS](./images/mysql-heatwave-creating.png "mysql heatwave creating ")
 
-15. The state 'Active' indicates that the DB System is ready for use
+16. The state 'Active' indicates that the DB System is ready for use
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address)
 
-    ![MDS](./images/mysql-create-button.png"mysql create button ")
+    ![MDS](./images/mysql-heatwave-active.png"mysql heatwave active ")
 
 ## You may now proceed to the next lab
 

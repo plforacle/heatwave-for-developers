@@ -47,9 +47,9 @@ In this lab, you will be guided through the following steps:
 - Create SSH Key on Oracle Cloud Infrastructure Cloud Shell 
 - Create Compute instance
 - Connect to DB System using MySQL Shell through Compute Instance and Cloud Shell 
-- Load  schema(mysql_customer_orders) and data  into  MySQL HeatWave 
+- Load  schema(mysql\_customer\_orders) and data  into  MySQL HeatWave 
 - Add HeatWave cluster to DB System
-- Load mysql_customer_orders data to HeatWave Cluster
+- Load mysql\_customer\_orders data to HeatWave Cluster
 - Run queries in HeatWave and MySQL and see the performance improvement in HeatWave!
 - Use Bastion to access MySQL Shell for PHP development with VS Code
 - Perform development tasks
