@@ -46,7 +46,7 @@ In this lab, you will be guided through the following tasks:
     ```
 
 4. Select the **Parent Compartment**, and click **Create Compartment**
-    ![VCN](./images/compartment_create.png "create the compartment")
+    ![VCN](./images/compartment-create.png "create the compartment")
 
 ## Task 2: Create Virtual Cloud Network
 
@@ -56,12 +56,12 @@ In this lab, you will be guided through the following tasks:
     ![VCN](./images/menuvcn.png "show vcn menu")
 
 2. Click **Start VCN Wizard**
-    ![VCN](./images/networking_main.png "show networking main dialog")
+    ![VCN](./images/networking-main.png "show networking main dialog")
 
 3. Select 'Create VCN with Internet Connectivity'
 
     Click 'Start VCN Wizard'
-    ![VCN](./images/vcn_wizard_start.png "start vcn wizard")
+    ![VCN](./images/vcn-wizard-start.png "start vcn wizard")
 
 4. Create a VCN with Internet Connectivity
 
@@ -76,7 +76,7 @@ In this lab, you will be guided through the following tasks:
     Compartment: Select  **heatwave**
 
     Your screen should look similar to the following
-        ![VCN](./images/vcn_internet_connect_config.png "Configured VCN internet connection ")
+        ![VCN](./images/vcn-internet-connect-config.png "Configured VCN internet connection ")
 
 5. Click 'Next' at the bottom of the screen
 
@@ -85,21 +85,21 @@ In this lab, you will be guided through the following tasks:
     Click 'Create' to create the VCN
 
 7. The Virtual Cloud Network creation is completing
-    ![VCN](./images/vcn_wizard_review.png "Review complete vcn wizard work")
+    ![VCN](./images/vcn-wizard-review.png "Review complete vcn wizard work")
 
 8. Click 'View VCN' to display the created VCN
-    ![VCN](./images/wizard_view_vcn.png "display the created")
+    ![VCN](./images/wizard-view-vcn.png "display the created")
 
 ## Task 3: Configure security list to allow MySQL incoming connections
 
 1. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**private subnet-heatwave-vcn**'
-     ![VCN](./images/vcn_details.png "Show VCN Details")
+     ![VCN](./images/vcn-details.png "Show VCN Details")
 
 2. On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for private subnet-heatwave-vcn**'
-    ![VCN](./images/vcn_security_list.png "Show Security Lists")
+    ![VCN](./images/vcn-security-list.png "Show Security Lists")
 
 3. On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
-    ![VCN](./images/vcn_mysql_ingress.png "Prepar for add Add Ingress Rules")
+    ![VCN](./images/vcn-mysql-ingress.png "Prepar for add Add Ingress Rules")
 
 4. On Add Ingress Rules page under Ingress Rule
 
@@ -122,10 +122,10 @@ In this lab, you will be guided through the following tasks:
     ```
 
 5. Click 'Add Ingress Rule'
-    ![VCN](./images/vcn_mysql_add_ingress.png "Save  MySQL Ingress Rule  entries")
+    ![VCN](./images/vcn-mysql-add-ingress.png "Save  MySQL Ingress Rule  entries")
 
 6. On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
-    ![VCN](./images/vcn_mysql_ingress_completed.png "view  MySQL Ingress Rules")
+    ![VCN](./images/vcn-mysql-ingress-completed.png "view  MySQL Ingress Rules")
 
 ## Task 4: Configure security list to allow HTTP incoming connections
 
@@ -159,13 +159,13 @@ In this lab, you will be guided through the following tasks:
 
 6. Click 'Add Ingress Rule'
 
-    ![VCN](./images/vcn_ttp_add_ingress.png "Add HTTP Ingress Rule")
+    ![VCN](./images/vcn-ttp-add-ingress.png "Add HTTP Ingress Rule")
 
 7. On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
 
-    ![VCN](./images/vcn_ttp_ingress_completed.png"View VCN Completed HTTP Ingress rules")
+    ![VCN](./images/vcn-ttp-ingress-completed.png"View VCN Completed HTTP Ingress rules")
 
-**You may now proceed to the next lab**
+## You may now proceed to the next lab
 
 ## Acknowledgements
 
