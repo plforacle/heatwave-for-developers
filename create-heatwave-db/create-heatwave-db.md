@@ -4,7 +4,7 @@
 
 In this lab, you will create and configure a MySQL DB System
 
-_Estimated Time:_ 20 minutes
+_Estimated Time:_ 10 minutes
 
 ### Objectives
 
@@ -17,8 +17,9 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
+- Completed Lab1
 
-## Task 1: Create MySQL Database for HeatWave (DB System
+## Task 1: Create MySQL Database for HeatWave (DB System)
 
 1. Go to Navigation Menu
          Databases
@@ -27,7 +28,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/mysql-menu.png "mysql menu")
 
 2. Click 'Create MySQL DB System'
-    ![MDS](./images/mysql-create.png "mysql create ")
+    ![MDS](./images/mysql-create-db.png "mysql create DB")
 
 3. Select the Development or Testing Option
     ![MDS](./images/mysql-create-select-option.png "select option")
@@ -41,22 +42,22 @@ In this lab, you will be guided through the following tasks:
     - Configure placement
     - Configure hardware
     - Exclude Backups
-    - Advanced Options - Data Import
+    - Advanced Options - NetWorking
 
 5. Provide basic information for the DB System:
 
-    Select Compartment **(root)**
+    Select Compartment **heatwave**
 
     Enter Name
 
     ```bash
-    <copy>MDS-HW</copy>
+    <copy>heatwave-db</copy>
     ```
 
     Enter Description
 
     ```bash
-    <copy>MySQL Database Service HeatWave instance</copy>
+    <copy>MySQL Database Service HeatWave Instance</copy>
     ```
 
     Select **HeatWave** to specify a HeatWave DB System
@@ -74,15 +75,15 @@ In this lab, you will be guided through the following tasks:
 
 7. On Configure networking, keep the default values
 
-    Virtual Cloud Network: **MDS-VCN**
+    Virtual Cloud Network: **heatwave-vcn**
 
-    Subnet: **Private Subnet-MDS-VCN (Regional)**
+    Subnet: **Private Subnet-heatwave-vcn (Regional)**
 
     ![MDS](./images/mysql-vcn.png "mysql vcn ")
 
 8. On Configure placement under 'Availability Domain'
 
-    Select AD-3
+    Select AD-1
 
     Do not check 'Choose a Fault Domain' for this DB System.
 
@@ -104,11 +105,13 @@ In this lab, you will be guided through the following tasks:
 
 11. Click on Show Advanced Options
 
-12. Go to the Networking tab, in the Hostname field enter (same as DB System Name):
+12. Go to the Networking tab, in the Hostname field enter  (same as DB System Name):
 
     ```bash
-        <copy>MDS-HW</copy> 
+        <copy>heatwave-db</copy> 
     ```
+
+    ![MDS](./images/mysql-host.png "mysqlhost ")
 
 13. Review **Create MySQL DB System**  Screen
 
