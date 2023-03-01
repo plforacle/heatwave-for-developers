@@ -16,7 +16,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Completed Task 3
+- Completed Lab 4
 
 ## Task 1: Run Queries in HeatWave
 
@@ -30,7 +30,7 @@ In this lab, you will be guided through the following tasks:
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
 
-3. Change to the mysql_customer_orders database
+3. Change to the mysql\_customer\_orders database
 
     Enter the following command at the prompt
 
@@ -38,7 +38,7 @@ In this lab, you will be guided through the following tasks:
     <copy>USE mysql_customer_orders;</copy>
     ```
 
-4. **Query 1** - Find per-company average age of passengers from Switzerland, Italy and France
+4. **Query 1** - List Custeomer total purchase for the year by month
 
 5. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
@@ -68,6 +68,7 @@ In this lab, you will be guided through the following tasks:
         order by order_datetime;
     </copy>
     ```
+
     ![Connect](./images/heatwave-query-company.png "heatwave query company")
 
 7. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
@@ -111,4 +112,4 @@ You may now **proceed to the next lab**
 - **Author** - Perside Foster, MySQL Solution Engineering
 
 - **Contributors** - Mndy Pang, Principal Product Manager, Salil Pradhan, Principal Product Manager, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, May 2022
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2023

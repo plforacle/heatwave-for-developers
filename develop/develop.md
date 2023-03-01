@@ -215,19 +215,19 @@ In this lab, you will be guided through the following tasks:
 2. Get Eureka Application files  from Storage Object Stogage
 
     ```bash
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/FLM0h_7uz_eBxAZEvUQgfAo99BeJY0QrznWejeqHJR3ZqnUPwUoiIT9vQDqGTCJ1/n/mysqlpm/b/plf_mysql_customer_orders/o/eureka_sales_web/eureka_app.zip</copy>
+    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/FLM0h_7uz_eBxAZEvUQgfAo99BeJY0QrznWejeqHJR3ZqnUPwUoiIT9vQDqGTCJ1/n/mysqlpm/b/plf_mysql_customer_orders/o/eureka_sales_web/eureka_app.zip</copy>
     ```
 
 3. Unnzip eureka_app.zip file 
 
     ```bash
-    <copy>unzip eureka_app.zip </copy>
+    <copy>sudo unzip eureka_app.zip </copy>
     ```
 
 4. Open the config.php file 
 
     ```bash
-    <copy>sudo  nano eureka_app/config.php </copy>
+    <copy>sudo nano eureka_app/config.php </copy>
     ```
 
     Remember to replace the IP daadress,username, and password (lines 2 and 98 )

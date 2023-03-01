@@ -13,8 +13,9 @@ _Estimated Time:_ 15 minutes
 
 In this lab, you will be guided through the following task:
 
-- Add a HeatWave Cluster to MDS-HW MySQL Database System
-- Load Airportdb Data into HeatWave
+- Add a HeatWave Cluster to **heatwave-db** MySQL Database System
+- Load mysql\_customer\_orders Data into HeatWave
+- Completed Lab 3
 
 ### Prerequisites
 
@@ -54,7 +55,7 @@ In this lab, you will be guided through the following task:
 8. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/mysql-heat-cluster-complete.png "mysql heat cluster complete ")
 
-## Task 2: Load mysql\_customer\_orders Data into HeatWave Cluster
+## Task 2: Load Schema Data into HeatWave Cluster
 
 1. If not already connected with SSH, connect to Compute instance using Cloud Shell
 
