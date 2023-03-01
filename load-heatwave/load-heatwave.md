@@ -20,26 +20,41 @@ In this lab, you will be guided through the following task:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Completed Lab 2
+- Completed Lab 3
 
 
 ## Task 1: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-1. Open the navigation menu  
+1. Go to Navigation Menu
     Databases
-    MySQL
-    DB Systems
-2. Choose the root Compartment. A list of DB Systems is displayed.
-    ![Connect](./images/mysql-add-heatwave.png "mysql add heatwave ")
-3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
-    ![Connect](./images/mysql-add-heat-vcn.png "mysql add heat vcn ")
-4. **Set Node Count to 2 for this Lab Click** “Add HeatWave Cluster” to create the HeatWave cluster
+        MySQL
+
+    ![CONNECT](./images/db-list.png "db list")
+
+2. Click the `heatwave-db` Database System link
+
+    ![CONNECT](./images/mysql-heatwave-active.png "db active ")
+
+3. In the list of DB Systems, click the **heatwave-db** system. click **More Action ->  Add HeatWave Cluster**.
+    ![Connect](./images/mysql-heatwave-more.png "mysql heatwave more")
+
+4. Estiamte cluster nodes
+    ![Connect](./images/heatwave-cluster-estimate-node.png "heatwave cluster add estimate node")
+
+5. Generate Estimate and review loaded data then  hit cancel
+
+    ![Connect](./images/heatwave-cluster-generate-estimate.png "heatwave cluster generate  estimate ")
+
+6. **Set Node Count to 2 for this Lab Click** “Add HeatWave Cluster” to create the HeatWave cluster
+
     ![Connect](./images/mysql-add-heat-estimate.png "mysql add-heat estimate")
-5. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 
-6. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+
+7. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 
+
+8. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/mysql-heat-cluster-complete.png "mysql heat cluster complete ")
 
-## Task 2: Load airportdb Data into HeatWave Cluster
+## Task 2: Load mysql\_customer\_orders Data into HeatWave Cluster
 
 1. If not already connected with SSH, connect to Compute instance using Cloud Shell
 
@@ -56,7 +71,7 @@ In this lab, you will be guided through the following task:
     ![Connect](./images/cloud-shell-connect.png " cloud shell connect")
 
     ```bash
-    <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
+    <copy>CALL sys.heatwave_load(JSON_ARRAY('mysql_customer_orders'), NULL);</copy>
     ```
 
 4. The completed load cluster screen should look like this:
@@ -76,12 +91,6 @@ In this lab, you will be guided through the following task:
     ```
 
     ![Connect](./images/heatwave-loaded-data.png "heatwave loaded data")
-
-## Learn More
-
-- [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
-
-- [MySQL Database Documentation](https://www.MySQL.com)
 
 ## You may now proceed to the next lab
 

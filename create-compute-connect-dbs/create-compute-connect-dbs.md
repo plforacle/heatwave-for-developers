@@ -22,7 +22,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Must Complete Lab 1
+- Must Complete Lab 2
 
 ## Task 1: Create SSH Key on OCI Cloud Shell
 
@@ -134,7 +134,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 15. The state 'Running' indicates that the Virtual Machine is ready to use.
 
-    ![CONNECT](./images/comute-running.png "compute running")
+    ![CONNECT](./images/compute-running.png "compute running")
 
 ## Task 3: Connect to MySQL Database System and Create and Load DB schema
 
