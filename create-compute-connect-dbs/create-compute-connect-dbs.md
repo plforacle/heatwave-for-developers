@@ -257,7 +257,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/mysql_customer_orders-list.png "mysql_customer_orderslist") 
 
-## You may now proceed to the next lab
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

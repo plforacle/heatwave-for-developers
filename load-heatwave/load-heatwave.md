@@ -92,7 +92,7 @@ In this lab, you will be guided through the following task:
 
     ![Connect](./images/heatwave-loaded-data.png "heatwave loaded data")
 
-## You may now proceed to the next lab
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

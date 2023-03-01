@@ -132,7 +132,7 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/mysql-heatwave-active.png"mysql heatwave active ")
 
-## You may now proceed to the next lab
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

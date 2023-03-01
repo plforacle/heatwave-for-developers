@@ -99,7 +99,7 @@ In this lab, you will be guided through the following tasks:
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
 
-## You may now proceed to the next lab
+You may now **proceed to the next lab**
 
 ## Learn More
 

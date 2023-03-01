@@ -165,7 +165,7 @@ In this lab, you will be guided through the following tasks:
 
     ![VCN](./images/vcn-ttp-ingress-completed.png"View VCN Completed HTTP Ingress rules")
 
-## You may now proceed to the next lab
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 
