@@ -4,7 +4,7 @@
 
 MySQL HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
 
-_Estimated Lab Time:_ 30 minutes
+_Estimated Lab Time:_ 20 minutes
 
 ### Objectives
 
@@ -12,12 +12,12 @@ In this lab, you will be guided through the following tasks:
 
 - Install Apache and PHP
 - Create PHP / MYSQL Connect Application
-- Create Google Chart Application
+- Create Marketing Analytic Application 
 
 ### Prerequisites
 
 - An Oracle Trial or Paid Cloud Account
-- Some Experience with MySQL Shell
+- Some Experience with MySQL SQL and  PHP
 - Completed Lab 5
 
 ## Task 1: Install App Server (APACHE)
@@ -116,7 +116,7 @@ In this lab, you will be guided through the following tasks:
 
    Example: http://129.213.167.../info.php
 
-## Task 3: Create MDS / PHP connect app
+## Task 3: Create MySQl HeatWave / PHP connect app
 
 1. Security update"   set SELinux to allow Apache to connect to MySQL
 
@@ -137,7 +137,7 @@ In this lab, you will be guided through the following tasks:
 3. Add the following code to the editor and save the file (ctr + o) (ctl + x)
 
      ```bash
-        <copy><?php
+        <copy>?php
     // Database credentials
     define('DB_SERVER', '10.0.1...');// MDS server IP address
     define('DB_USERNAME', 'admin');
@@ -173,38 +173,35 @@ In this lab, you will be guided through the following tasks:
     ```bash
     <copy>
     <?php
-    require_once "config.php";
-    $query = "SELECT id, username  FROM mysql_customer_orders.users;";
-    if ($stmt = $link->prepare($query)) {
-        $stmt->execute();
-        $stmt->bind_result($id,$username);
-        echo "<table>";
-                echo "<tr>";
-                echo "<th>ID</th>";
-                echo "<th>username</th>";
-            echo "</tr>";
+require_once "config.php";
+$query = "SELECT id, username  FROM mysql_customer_orders.users;";
+if ($stmt = $link->prepare($query)) {
+   $stmt->execute();
+   $stmt->bind_result($id,$username);
+   echo "<table>";
+        echo "<tr>";
+        echo "<th>ID</th>";
+        echo "<th>UserName</th>";
+    echo "</tr>";
 
-        while ($stmt->fetch()) {
-            echo "<tr>";
-            echo "<td>" . $id ."</td>";
-            echo "<td>" . $username . "</td>";
+    while ($stmt->fetch()) {
+        echo "<tr>";
+           echo "<td>" . $id ."</td>";
+           echo "<td>" . $username. "</td>";
+        echo "</tr>";
+     }
 
-            echo "</tr>";
-        }
-
-        $stmt->close();
-    }
-    ?>
-
-    </copy>
-
+    $stmt->close();
+}
+?>
+</copy>
     ```
 
 6. From your local  machine connect to dbhwtest.php
 
     Example: http://129.213.167..../dbtest.php  
 
-## Task 3: Create Marketing Analytic application
+## Task 4: Create Marketing Analytic Application
 
 1. Go to the development folder
 
@@ -215,29 +212,29 @@ In this lab, you will be guided through the following tasks:
 2. Get Eureka Application files  from Storage Object Stogage
 
     ```bash
-    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/FLM0h_7uz_eBxAZEvUQgfAo99BeJY0QrznWejeqHJR3ZqnUPwUoiIT9vQDqGTCJ1/n/mysqlpm/b/plf_mysql_customer_orders/o/eureka_sales_web/eureka_app.zip</copy>
+    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/_s6Gj-VS4vo95Ch180Ip3ABw7fnu3ufHvUG0MdIOKJ40DzuERyYeQos3agOt0y0e/n/mysqlpm/b/plf_mysql_customer_orders/o/eureka_sales/eurekaweb.zip</copy>
     ```
 
-3. Unnzip eureka_app.zip file 
+3. Unnzip eurekaweb.zip file 
 
     ```bash
-    <copy>sudo unzip eureka_app.zip </copy>
+    <copy>sudo unzip eurekaweb.zip </copy>
     ```
 
 4. Open the config.php file 
 
     ```bash
-    <copy>sudo nano eureka_app/config.php </copy>
+    <copy>sudo nano eurekaweb/config.php </copy>
     ```
 
-    Remember to replace the IP daadress,username, and password (lines 2 and 98 )
-        - $con = mysqli_connect('30.0...','admin','Welcome#123','mysql_customer_orders');
+    Change config.php by replacing the mysql\_customer\_orders schema 'localhost' with heatwave-db IP address,username, and password;
 
-    - Save the eureka_app/config.php
+    - Save the eurekaweb/config.php
+    ![MDS](./images/eurekaweb-config.png " ")
 
-5. From your local  machine connect to dbhwtest.php
+5. From your local machine connect to heatwave-client IP Address/eurekaweb/login.php 
 
-    Example: http://129.213.167..../eureka_app/login.php
+    Example: http://999.999.999/eurekaweb/login.php
 
     ![MDS](./images/login_page.png " ")
 
@@ -245,4 +242,4 @@ In this lab, you will be guided through the following tasks:
 
 * **Author** - Perside Foster, MySQL Solution Engineering, Harsh Nayak , MySQL Solution Engineering 
 * **Contributors** - Salil Pradhan, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, Sept 2022
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2023
