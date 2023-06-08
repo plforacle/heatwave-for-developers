@@ -136,7 +136,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/compute-running.png "compute running")
 
-## Task 3: Connect to MySQL Database System and Create and Load DB schema
+## Task 3: Connect to MySQL Database System 
 
 1. Copy the public IP address of the active Compute Instance to your notepad
 
@@ -205,51 +205,15 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/connect-myslqsh.png "connect myslqsh")
 
-6. List schemas in your heatwave instance before Shell Load
+6. List schemas in your heatwave instance. The **mysql\_customer\_orders** schema was loaded  during the creation of the database.
 
-    ```bash
-        <copy>show databses;</copy>
-    ```
-
-    ![CONNECT](./images/list-schemas-before.png "list schemas before")
-
-7. Create  and load sample database (mysql\_customer\_orders) from object storage
-
-     a. 
-
-    ```bash
-        <copy>\js</copy>
-    ```
-
-    b. 
-
-    ```bash
-    <copy>util.loadDump("https://objectstorage.us-ashburn-1.oraclecloud.com/p/XEr0VxeZ--ec5VOZ3RUF82T2zYZ86mMysnI6idtoe7Fak0vL2ZihIddkm7awoWFx/n/mysqlpm/b/plf_mysql_customer_orders/o/mco_dump_02102023/", {progressFile: "progress.json"})</copy>
-    ```
-
-    **Note** it takse about 5 minutes to create and load the mysql_customer_orders schema
-
-8. List schemas in your heatwave instance after Shell Load
-
-    a. 
-
-    ```bash
-        <copy>\sql</copy>
-    ```
-
-    b.
- 
     ```bash
         <copy>show databases;</copy>
     ```
-    
+
     ![CONNECT](./images/list-schemas-after.png "list schemas after")
 
-9. View  the mysql\_customer\_orders total records per table in
-
-
-
-    b. 
+7. View  the mysql\_customer\_orders total records per table in
 
     ```bash
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'mysql_customer_orders';</copy>

@@ -31,7 +31,7 @@
         },
 
         {
-          "title": "Lab 4: Create Compute, Connect to MySQL HeatWave, and Load DB Schema",
+          "title": "Lab 4: Create Compute and Connect to MySQL HeatWave",
           "filename": "../../create-compute-connect-dbs/create-compute-connect-dbs.md"
         },
            
