@@ -75,7 +75,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 4. Unzip mco\_dump\_02102023.zip file which will generate folder datafiles with Approximate 440 files
 
     ```bash
-    <copy>unzip mco\_dump\_02102023.zip</copy>
+    <copy>unzip mco_dump_02102023.zip</copy>
      ```
 
 5. List the db-data folder to make the  mco\_dump\_02102023 was created
