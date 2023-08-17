@@ -14,7 +14,7 @@ This workshop will show you how easy it is to create and manage MySQL HeatWave a
 
 [](youtube:/IGPaJiCK_fI)
 
-_Estimated Lab Time:_ 3 hours +
+_Estimated Lab Time:_ 1.5 hours +
 
 ### About Product/Technology
 

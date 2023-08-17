@@ -115,32 +115,18 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/mysql-host.png "mysqlhost ")
 
-14. Set Data Import Link
-    - a. Select Data Import Tab
-    - b. clict the **Click here to create a PAR URL for an existing bucket.** link
-    - c. Select the **heatwave** Compartment
-    - d. Select the **mysql\_customer\_orders** bucket
-    - e. Select the **mco\_dump\_02102023** prefix
-    - f. Click the **Create and set PAR URL** Button
+14. Review **Create MySQL DB System**  Screen
 
-    ![MDS](./images/mysql-db-get-par-link.png "mysql db get par link")
-
-    ![MDS](./images/mysql-db-create-par-link.png "mysql db create par link")
-
-    ![MDS](./images/mysql-db-create-par-link-created.png "mysql db get par link created")
-
-15. Review the **Create MySQL DB System**  Screen
-
-    ![MDS](./images/mysql-create-button.png "mysql create button")
+    ![MDS](./images/mysql-create-button.png "mysql create dbbutton")
 
     Click the '**Create**' button
 
-16. The New MySQL DB System will be ready to use after a few minutes
+15. The New MySQL DB System will be ready to use after a few minutes
 
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/mysql-heatwave-creating.png "mysql heatwave creating ")
 
-17. The state 'Active' indicates that the DB System is ready for use
+16. The state 'Active' indicates that the DB System is ready for use
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address)
 
