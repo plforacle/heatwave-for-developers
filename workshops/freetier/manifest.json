@@ -17,26 +17,31 @@
  
         {
           "title": "Lab 1: Create Compartment and Virtual Cloud Network",
-          "filename": "../../create-heatwave-vcn-db/create-heatwave-vcn-db.md"
+          "filename": "../../create-compartment-vcn/create-compartment-vcn.md"
         },
 
         {
-          "title": "Lab 2: Create Compute, Connect to MySQL HeatWave, and Load DB Schema",
+          "title": "Lab 2: Create MySQL HeatWave Database",
+          "filename": "../../create-heatwave-db/create-heatwave-db.md"
+        },
+
+        {
+          "title": "Lab 3: Create Compute, Connect to MySQL HeatWave, and Load DB Schema",
           "filename": "../../create-compute-connect-dbs/create-compute-connect-dbs.md"
         },
            
         {
-            "title": "Lab 3: Load MySQL HeatWave Cluster",
+            "title": "Lab 4: Load MySQL HeatWave Cluster",
             "filename": "../../load-heatwave/load-heatwave.md"
         },
         
         {
-            "title": "Lab 4: Run Queries with MySQL Shell  ",
+            "title": "Lab 5: Run Queries with MySQL Shell  ",
             "filename": "../../run-queries/run-queries.md"
         },
 
         {
-          "title": "Lab 5: Develop MySQL HeatWave PHP Apps",
+          "title": "Lab 6: Develop MySQL HeatWave PHP Apps",
           "filename": "../../develop/develop.md"
         }, 
 
@@ -44,7 +49,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
