@@ -227,7 +227,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>util.loadDump("https://objectstorage.us-ashburn-1.oraclecloud.com/p/If-D5OfqC9QrIMJwVQ5aOYWUPWf3n26do9KBOkKb96hnw9Sy-1s4C64lvwD48Sb6/n/mysqlpm/b/mysql_customer_orders/o/mco_dump_02102023/", {progressFile: "progress.json"})</copy>
     ```
 
-    **Note** it takse about 5 minutes to create and load the mysql_customer_orders schema
+    **Note** It takes about 5 minutes to create and load the mysql\_customer\_orders schema
 
 8. List schemas in your heatwave instance after Shell Load
 
